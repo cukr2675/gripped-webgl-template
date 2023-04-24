@@ -2,7 +2,7 @@
   "name": "jp.cukr2675.gripped-webgl-template",
   "displayName": "Gripped WebGL Template",
   "author": "CUKR",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "This WebGL template provides a grip for switching to fullscreen on mobile.",
   "unity": "2021.3",
   "documentationUrl": "https://github.com/cukr2675/gripped-webgl-template",
