@@ -136,7 +136,7 @@
       document.body.appendChild(script);
       
       const grippedWebGLTemplate = {
-        aspectRatio: {{{ LOCK_ASPECT_RATIO !== 'false' && Number.parseFloat(LOCK_ASPECT_RATIO) !== 0 ? WIDTH / HEIGHT : 'null' }}},
+        aspectRatio: {{{ LOCK_ASPECT_RATIO !== '' && Number.parseFloat(LOCK_ASPECT_RATIO) !== 0 ? WIDTH / HEIGHT : 'null' }}},
         fullscreenOrientation: {{{ MANIFEST_ORIENTATION ? `'${MANIFEST_ORIENTATION}'` : 'null' }}},
         resizeDelayMilliseconds: 250,
         resizeTimeoutID: null,
