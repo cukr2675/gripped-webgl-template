@@ -24,12 +24,6 @@ public class SampleController : MonoBehaviour
     [SerializeField] private Toggle keepAspectRatioToggle = null;
     [SerializeField] private Dropdown aspectRatioDropdown = null;
 
-    [Header("OverflowFromWindow")]
-    [SerializeField] private Toggle overflowFromWindowToggle = null;
-
-    [Header("UseFixedCanvas")]
-    [SerializeField] private Toggle useFixedCanvasToggle = null;
-
     [Header("Zoom")]
     [SerializeField] private Dropdown zoomDropdown = null;
 
@@ -56,21 +50,19 @@ public class SampleController : MonoBehaviour
         submitButton.onClick.AddListener(() =>
         {
             var keepAspectRatio = keepAspectRatioToggle.isOn;
-            var overflowFromWindow = overflowFromWindowToggle.isOn;
-            var useFixedCanvas = useFixedCanvasToggle.isOn;
             if (keepAspectRatio)
             {
                 var option = aspectRatioDropdown.options[aspectRatioDropdown.value];
                 var sizeTexts = option.text.Split(':');
                 var width = float.Parse(sizeTexts[0]);
                 var height = float.Parse(sizeTexts[1]);
-                GrippedWebGL.LockAspectRatio(width / height, overflowFromWindow, useFixedCanvas);
-                Debug.Log($"{width} x {height}; {(overflowFromWindow ? "Overflow; " : "")}{(useFixedCanvas ? "Fixed; " : "")}");
+                GrippedWebGL.LockAspectRatio(width / height);
+                Debug.Log($"Lock aspect ratio {width} x {height}");
             }
             else
             {
-                GrippedWebGL.FreeAspectRatio(overflowFromWindow, useFixedCanvas);
-                Debug.Log($"{(overflowFromWindow ? "Overflow; " : "")}{(useFixedCanvas ? "Fixed; " : "")}");
+                GrippedWebGL.FreeAspectRatio();
+                Debug.Log($"Free aspect ratio");
             }
         });
 
