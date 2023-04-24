@@ -53,7 +53,7 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
       const addressBarIsVisible = height < dummyControl.clientHeight;
       if (addressBarIsVisible) {
         document.body.style.overflow = null;
-        document.body.style.marginBottom = '125vh';
+        document.body.style.marginBottom = '200vh';
         addressBarGlip.style.display = 'block';
       } else {
         document.body.style.overflow = 'hidden';
