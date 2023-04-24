@@ -1,0 +1,16 @@
+{
+    "name": "GrippedWebGLTemplate.Samples",
+    "rootNamespace": "GrippedWebGLTemplate.Samples",
+    "references": [
+        "GUID:cdfea945815744745bf3cc14dc4133cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
