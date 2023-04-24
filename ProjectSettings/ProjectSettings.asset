@@ -376,7 +376,7 @@ PlayerSettings:
   m_TemplateCustomTags:
     FAVICON_IMAGE_PATH: 
     ICON_HREF: 
-    LOCK_ASPECT_RATIO: 
+    LOCK_ASPECT_RATIO: 1
     MANIFEST_DISPLAY: 
     MANIFEST_ORIENTATION: landscape
     OVERFLOW_FROM_WINDOW: 
