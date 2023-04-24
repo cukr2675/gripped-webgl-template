@@ -29,7 +29,7 @@ namespace GrippedWebGLTemplate.Samples
         [SerializeField] private Dropdown zoomDropdown = null;
 
         [Space]
-        [SerializeField] private Button submitButton = null;
+        [SerializeField] private Button resizeButton = null;
         [SerializeField] private Text fpsText = null;
 
         private int frameCount;
@@ -48,7 +48,7 @@ namespace GrippedWebGLTemplate.Samples
             tilemap.BoxFill(Vector3Int.one * -tileRange, tile, -tileRange, -tileRange, tileRange, tileRange);
             tilemap.BoxFill(Vector3Int.one * tileRange, tile, -tileRange, -tileRange, tileRange, tileRange);
 
-            submitButton.onClick.AddListener(() =>
+            resizeButton.onClick.AddListener(() =>
             {
                 var keepAspectRatio = keepAspectRatioToggle.isOn;
                 if (keepAspectRatio)
@@ -77,7 +77,7 @@ namespace GrippedWebGLTemplate.Samples
             var now = Time.time;
             if (now >= lastTime + 1f)
             {
-                fpsText.text = frameCount.ToString();
+                fpsText.text = $"{frameCount} fps";
                 frameCount = 0;
                 lastTime = now;
             }
