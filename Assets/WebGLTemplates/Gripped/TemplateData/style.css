@@ -36,6 +36,13 @@ body {
   border-right: 60px solid transparent;
   color: #aaa;
 }
+#address-bar-glip * {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
 #address-bar-glip span {
   position: absolute;
   top: -50px;
