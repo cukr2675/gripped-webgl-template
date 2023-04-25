@@ -375,7 +375,7 @@ PlayerSettings:
   openGLRequireES32: 0
   m_TemplateCustomTags:
     FAVICON_IMAGE_PATH: 
-    ICON_HREF: 
+    ICON_HREF: favicon.png
     LOCK_ASPECT_RATIO: 1
     MANIFEST_DISPLAY: 
     MANIFEST_ORIENTATION: landscape
@@ -634,11 +634,11 @@ PlayerSettings:
   webGLTemplate: PROJECT:Gripped
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
-  webGLCompressionFormat: 2
+  webGLCompressionFormat: 1
   webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
-  webGLDecompressionFallback: 0
+  webGLDecompressionFallback: 1
   webGLPowerPreference: 2
   scriptingDefineSymbols: {}
   additionalCompilerArguments: {}

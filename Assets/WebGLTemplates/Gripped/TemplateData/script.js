@@ -28,6 +28,9 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
   window.addEventListener('resize', () => {
     grippedWebGLTemplate.resizeDelay();
   });
+  document.addEventListener('fullscreenchange', () => {
+    grippedWebGLTemplate.resizeDelay();
+  });
   
   function unityResize() {
     const unityCanvas = document.querySelector('#unity-canvas');
@@ -61,7 +64,7 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         addressBarGlip.style.display = 'none';
       }
     } else if (/Android/i.test(navigator.userAgent)) {
-      if (document.fullscreenElement) {
+      if (document.fullscreenElement || window.matchMedia('(display-mode: standalone)').matches || window.matchMedia('(display-mode: fullscreen)').matches) {
         addressBarGlip.style.display = 'none';
       } else {
         addressBarGlip.style.display = 'block';
