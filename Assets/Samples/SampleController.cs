@@ -34,7 +34,7 @@ namespace GrippedWebGLTemplate.Samples
 
         private int frameCount;
         private float lastTime;
-        private int lastHeight;
+        private Vector2Int lastSize;
 
         private RenderTexture renderTexture;
         private RectTransform imageTransform;
@@ -65,6 +65,9 @@ namespace GrippedWebGLTemplate.Samples
                     GrippedWebGL.FreeAspectRatio();
                     Debug.Log($"Free aspect ratio");
                 }
+
+                var screenSize = new Vector2Int(Screen.width, Screen.height);
+                NewRenderTexture(screenSize);
             });
 
             frameCount = 0;
@@ -83,10 +86,10 @@ namespace GrippedWebGLTemplate.Samples
             }
 
             var screenSize = new Vector2Int(Screen.width, Screen.height);
-            if (screenSize.y != lastHeight)
+            if (screenSize != lastSize)
             {
                 NewRenderTexture(screenSize);
-                lastHeight = screenSize.y;
+                lastSize = screenSize;
             }
         }
 
