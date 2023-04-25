@@ -16,14 +16,6 @@ body {
 #unity-progress-bar-full { width: 0%; height: 18px; margin-top: 10px; background: url('progress-bar-full-dark.png') no-repeat center }
 #unity-warning { position: absolute; left: 50%; top: 10%; transform: translate(-50%); background: white; padding: 10px; display: none }
 
-* {
-  user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-}
 #dummy-control {
   position: absolute;
   width: 100vw;
