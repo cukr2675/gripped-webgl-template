@@ -8,6 +8,8 @@
 #endif
 #if LOCK_ASPECT_RATIO
 #endif
+#if PIXELATED
+#endif
 <!DOCTYPE html>
 <html>
   <head>
@@ -138,6 +140,7 @@
       const grippedWebGLTemplate = {
         aspectRatio: {{{ LOCK_ASPECT_RATIO !== '' && Number.parseFloat(LOCK_ASPECT_RATIO) !== 0 ? WIDTH / HEIGHT : 'null' }}},
         fullscreenOrientation: {{{ MANIFEST_ORIENTATION ? `'${MANIFEST_ORIENTATION}'` : 'null' }}},
+        pixelated: false,
         resizeDelayMilliseconds: 250,
         resizeTimeoutID: null,
         resize: () => {
@@ -178,6 +181,7 @@
         },
         setPixelated: (pixelated) => {
           const unityCanvas = document.querySelector('#unity-canvas');
+          grippedWebGLTemplate.pixelated = pixelated;
           if (pixelated) {
             unityCanvas.style.imageRendering = 'pixelated';
           } else {
@@ -185,6 +189,10 @@
           }
         }
       };
+
+      if ({{{ PIXELATED !== '' && Number.parseFloat(PIXELATED) !== 0 ? 'true' : 'false' }}}) {
+        grippedWebGLTemplate.setPixelated(true);
+      }
     </script>
     <script src="TemplateData/script.js"></script>
   </body>
