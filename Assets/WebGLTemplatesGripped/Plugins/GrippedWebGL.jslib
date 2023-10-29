@@ -8,4 +8,8 @@ mergeInto(LibraryManager.library, {
     grippedWebGLTemplate.setAspectRatio(null);
   },
 
+  GrippedWebGLSetPixelated: function (pixelated) {
+    grippedWebGLTemplate.setPixelated(pixelated);
+  },
+
 });

@@ -14,6 +14,9 @@ namespace GrippedWebGLTemplate
         
         [DllImport("__Internal")]
         private static extern void GrippedWebGLFreeAspectRatio();
+        
+        [DllImport("__Internal")]
+        private static extern void GrippedWebGLSetPixelated(bool pixelated);
 #endif
 
         public static void LockAspectRatio(float aspectRatio)
@@ -27,6 +30,13 @@ namespace GrippedWebGLTemplate
         {
 #if UNITY_WEBGL && !UNITY_EDITOR
             GrippedWebGLFreeAspectRatio();
+#endif
+        }
+
+        public static void SetPixelated(bool pixelated)
+        {
+#if UNITY_WEBGL && !UNITY_EDITOR
+            GrippedWebGLSetPixelated(pixelated);
 #endif
         }
     }

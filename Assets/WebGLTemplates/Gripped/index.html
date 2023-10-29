@@ -175,6 +175,14 @@
           }
           grippedWebGLTemplate.aspectRatio = aspectRatio;
           grippedWebGLTemplate.resizeDelay();
+        },
+        setPixelated: (pixelated) => {
+          const unityCanvas = document.querySelector('#unity-canvas');
+          if (pixelated) {
+            unityCanvas.style.imageRendering = 'pixelated';
+          } else {
+            unityCanvas.style.imageRendering = null;
+          }
         }
       };
     </script>

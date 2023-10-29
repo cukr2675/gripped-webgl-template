@@ -28,6 +28,9 @@ namespace GrippedWebGLTemplate.Samples
         [Header("Zoom")]
         [SerializeField] private Dropdown zoomDropdown = null;
 
+        [Header("Pixelated")]
+        [SerializeField] private Toggle pixelatedToggle = null;
+
         [Space]
         [SerializeField] private Button resizeButton = null;
         [SerializeField] private Text fpsText = null;
@@ -68,6 +71,11 @@ namespace GrippedWebGLTemplate.Samples
 
                 var screenSize = new Vector2Int(Screen.width, Screen.height);
                 NewRenderTexture(screenSize);
+            });
+
+            pixelatedToggle.onValueChanged.AddListener(value =>
+            {
+                GrippedWebGL.SetPixelated(value);
             });
 
             frameCount = 0;
