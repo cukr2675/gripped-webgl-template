@@ -117,7 +117,8 @@
       const grippedWebGLTemplate = {
         aspectRatio: 1.7777777777777777,
         fullscreenOrientation: 'landscape',
-        resizeDelayMilliseconds: 250,
+        pixelated: false,
+        resizeDelayMilliseconds: 500,
         resizeTimeoutID: null,
         resize: () => {
           const unityCanvas = document.querySelector('#unity-canvas');
@@ -154,8 +155,21 @@
           }
           grippedWebGLTemplate.aspectRatio = aspectRatio;
           grippedWebGLTemplate.resizeDelay();
+        },
+        setPixelated: (pixelated) => {
+          const unityCanvas = document.querySelector('#unity-canvas');
+          grippedWebGLTemplate.pixelated = pixelated;
+          if (pixelated) {
+            unityCanvas.style.imageRendering = 'pixelated';
+          } else {
+            unityCanvas.style.imageRendering = null;
+          }
         }
       };
+
+      if (true) {
+        grippedWebGLTemplate.setPixelated(true);
+      }
     </script>
     <script src="TemplateData/script.js"></script>
   </body>
